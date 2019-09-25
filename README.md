@@ -48,7 +48,33 @@ mkdir scripts
 echo "Installation complete successfully"
 
 ```
-This script meets the requirement of the client for a simple installation 
+### 2. Script for uninstallation
+This script below will delete the created folders for the minimal rental app
+```.sh
+#!/bin/bash
+
+#this program will delete the created folders for the minimal rental app
+
+echo "Starting to uninstall"
+echo "uninstalling in the desktop (default). press enter"
+read
+cd ~/Desktop
+
+cd RentalCarApp
+
+#deleting the folders inside the main folder
+rmdir database
+rmdir scripts
+
+cd -
+
+#deleting the main folder
+rmdir RentalCarApp
+
+echo "uninstallation complete successfully"
+```
+
+This script meets the requirement of the client for a simple installation and uninstallation 
 however, it could be simplified so that the user does not need to execute the program by typing ``bash install.sh``
 
 Evaluation
