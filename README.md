@@ -19,6 +19,10 @@ A car rental office wants to buy a computer program that can record all their in
 
 Design
 ---------
+### First Sketch of System
+![CarRental](System.jpg)
+**Fig. 1** This diagram shows the main components of the minimal 
+rental app. It includes the input/output and main action.
 
 Development
 --------
