@@ -60,22 +60,18 @@ echo "uninstalling in the desktop (default). press enter"
 read
 cd ~/Desktop
 
-cd RentalCarApp
+rm -r RentalCarApp
 
-#deleting the folders inside the main folder
-rmdir database
-rmdir scripts
-
-cd -
-
-#deleting the main folder
-rmdir RentalCarApp
 
 echo "uninstallation complete successfully"
 ```
 
 This script meets the requirement of the client for a simple installation and uninstallation 
 however, it could be simplified so that the user does not need to execute the program by typing ``bash install.sh``
+
+###problem solving
+1. How to detect a word's length is odd or even?
+  A. you use the module sign which is %, and this sign will show if the length of the word is even or odd. We also use if statement with the module sign and it can be state it this way. len which is the length of the of the word % 2, if the outcome is 1 then the word is odd if its 0 then the word is even. 
 
 Evaluation
 -----------
