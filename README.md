@@ -87,6 +87,11 @@ the following steps describe the algorithm
 4. create file for recording trips as plate.txt
 `echo "Lxq912 nissan 2000 8" >> Maincarfile.txt`
 `echo " " > plate.txt`
+### Developing the action of recording trip
+1. get the arguments
+2. check that the car exist `test license.txt`
+3. add a new line to the file `license,txt`
+4. end
 
 Evaluation
 -----------
