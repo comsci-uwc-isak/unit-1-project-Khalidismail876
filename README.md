@@ -78,6 +78,16 @@ however, it could be simplified so that the user does not need to execute the pr
 1. How to detect a word's length is odd or even?
   A. you use the module sign which is %, and this sign will show if the length of the word is even or odd. We also use if statement with the module sign and it can be state it this way. len which is the length of the of the word % 2, if the outcome is 1 then the word is odd if its 0 then the word is even. 
 
+### Developing the action create new car
+This process involves the inputs _,_,_,_, and the outputs:
+the following steps describe the algorithm
+1. Get the input as argumanets `$1 $2 $3 $4`
+2. check number of argumetns (4) `$#`
+3. Store new car inside `Maincarfile.txt`
+4. create file for recording trips as plate.txt
+`echo "Lxq912 nissan 2000 8" >> Maincarfile.txt`
+`echo " " > plate.txt`
+
 Evaluation
 -----------
 
