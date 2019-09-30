@@ -24,6 +24,11 @@ Design
 **Fig. 1** This diagram shows the main components of the minimal 
 rental app. It includes the input/output and main action.
 
+### Second Sketch of system
+![CarRental](prosys.jpg)
+**Fig. 1** This diagram creates a frame on the important words
+that the program will use. 
+
 Development
 --------
 ### 1. Script for installation
