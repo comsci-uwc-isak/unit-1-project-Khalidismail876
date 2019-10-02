@@ -14,8 +14,24 @@ Contents
 
 Planning
 ----------
-### Definition of the problem
+### Definition of the problem (update this part)
 A car rental office wants to buy a computer program that can record all their information about their cars. This Program will help the clients to record the car that they took and how long their trip was and the history of the car for all its trips. They require the program to be simple so that it wouldn’t confuse the users and the owners of the company. For the program to be simple, it needs to contain simple commands which can be used by anyone without needing any instructions from the program designer. This program needs to be delivered to the company in the simplest way possible. Every time that they use their program, all their data need to be saved so that they could recall it later for more information. This program will store all their data which makes them keep track of their financial system. 
+
+### Proposed solution
+The car rental office proposed a simple program that would keep track on all their informations and sustain their financial system. So to make their program simple, I created an easy install and uninstall program that can make them use the program in their computers or remove it if they want. After they install, everything they need will be in the folder that would be provided and everything is simple and easy with just one step process. The language that I used is bash script, the reason why I chose the bash script is because it's in the computer and you don't need to install it from somewhere else. Overall, the program is simple as the car rental office proposed and it will help all their needs. 
+
+### Success Criteria
+These are outcomes that can be measured
+1. A car can be created
+2. A trip can be recorded for a given car
+3. A summary (Total distance traveled, average) of trips can be requested
+4. A car information can be edited
+5. A basic working backup system is available
+6. The user can easily (name notation, documantation) understand the commands
+7. Installation is **simple**, it does not require additional software, one step process
+8. A car information can be deleted
+9. The application can be uninstall
+
 
 Design
 ---------
