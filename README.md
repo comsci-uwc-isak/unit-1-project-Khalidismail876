@@ -152,6 +152,41 @@ bash frame "Trip recorded successfully"
 
 Evaluation
 -----------
+Test 1: A car can be created and stored in the database
+For this purpose we will create the file testcreate.sh. This is called software testing 
 
+The first step is to check for the file
 
+```.sh
+#!/bin/bash
+
+#This file checks if the action create successfully addsa new car.
+
+#step 1: navigate to the folder containing the create.sh file
+cd ../scripts/
+if [ -f "create" ]; then
+        echo "File exists, test will start now"
+else
+        echo "File create.sh doesn't exist. Test Failed"
+fi
+
+#step 2: Use the create script to record a new car TXM901 nissan red 9
+bash create TXM901 nissan red 9
+
+#step 3: check that a txt file was created inside the database folder with
+#the license number
+cd ../Database
+if [ -f "TXM901.txt" ]; then
+        echo "Test One: File with the license place created successfully. passe$
+else
+        echo "Tes one: file with license number not found: failing"
+fi
+```
+
+This file check all the criteria.
+
+This test corresponds to dynamic, alpha, and white box test. The reason why it corresponds to those three tests is
+because all of them require a person who knows how the program is designed or the person who actually designed it. 
+For the dynamic test, you need to excute the programming code and test it with a set of given cases. For the alpha testing
+you need the developers to use the program and see if it actually works or not. White box test is the last test that have been used which is examing the code that is used to create the program. All these types of testing is used for this program. 
 
