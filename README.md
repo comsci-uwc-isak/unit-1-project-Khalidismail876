@@ -103,11 +103,52 @@ the following steps describe the algorithm
 4. create file for recording trips as plate.txt
 `echo "Lxq912 nissan 2000 8" >> Maincarfile.txt`
 `echo " " > plate.txt`
+ 
+ Coding 
+```.sh
+#!/bin/bash
+
+if [$# -ne 4 ]; then
+	echo "Error with the number of arguments"
+	echo "Enter LIcense Maker Model Passengers"
+	exit
+fi
+lIcense=$1 
+maker=$2
+model=$3
+pp=$4
+
+echo "$license $maker $model $pp" >> db/maincarfile.txt
+echo "" > $license.txt
+```
+
+bash frame "Installation Complete"
 ### Developing the action of recording trip
 1. get the arguments and check (2)
 2. check that the car exist `test license.txt`
 3. add a new line to the file `license,txt`
 4. end
+
+coding
+```.sh
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+	echo "Error with the number of arguments"
+	echo "Enter License distance"
+	exit
+fi
+
+km=#2
+license=#1
+#check if the file exist
+if [ ! -f "$license.txt" ]; then
+	echo "Car does not exist"
+	exit
+fi
+echo "$km" >> $license.txt
+bash frame "Trip recorded successfully"
+```
 
 Evaluation
 -----------
