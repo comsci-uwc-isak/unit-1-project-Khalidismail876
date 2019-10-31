@@ -45,6 +45,10 @@ rental app. It includes the input/output and main action.
 **Fig. 2** This diagram creates a frame on the important words
 that the program will use. 
 
+### Third Sketch of the system
+![CarRental](Sketchhh.jpg)
+**Fig. 3** This diagram backsup all the data that we need to restore.
+
 Development
 --------
 ### 1. Script for installation
