@@ -67,6 +67,7 @@ cd RentalCarApp
 mkdir database
 mkdir scripts
 echo "Installation complete successfully"
+cp -r ~/desktop/Carapp/scripts/ ~/desktop/RentalCarApp/scripts/
 
 ```
 ### 2. Script for uninstallation
@@ -146,8 +147,139 @@ if [ ! -f "$license.txt" ]; then
 	echo "Car does not exist"
 	exit
 fi
-echo "$km" >> $license.txt
+echo "$km" >> ../database/$license.txt
 bash frame "Trip recorded successfully"
+```
+
+### Developing the action of Summarizing the traveled trip
+1. Get the argument (bash Summary.sh license)
+2. Check if the car exists 
+3. show the all the travelled KM
+4. Add all the travelled KM and show the sum
+
+The coding for this program is shown below.
+```.sh
+#!/bin/bash
+
+#This is an example script that solves the smaller
+#problems for the action summary
+#1. Read a txt file line by line
+#2. split a line by spaces
+#3.add the first word in the line
+
+if [ $# -ne 1 ]; then
+  echo "Car doesn't exist"
+  exit
+fi
+license=$1
+FILE="../database/$license.txt"
+totalkm=0
+while read line
+do
+  echo $line
+  #Bash splits a line by spaces
+  for word in $line
+  do
+    echo $word
+    ((totalkm=$word+$totalkm))
+    #add all the km
+    break
+  done
+done < $FILE
+#4. show very nicely the total km traveled
+bash frame "Total Km Traveled $totalkm"
+```
+
+### Developing the action of backingup the data
+1. Go to Desktop (cd ~)
+2. check if there is a file named Backup 
+3. if the file exist then delete
+4. create folder called Backup and within that folder create sub-folders called database and scripts
+5. copy everything from RentalCarApp to Backup
+
+The Code shown below described everything. 
+```.sh
+#!/bin/bash
+
+# This program creates a backup of the database folder in the app folder
+
+# Starting
+echo "Backup starting"
+
+# Navigate to the desktop to create a new folder (backup/)
+cd ~/desktop/
+# If theres already a folder called "backup", it is removed
+rm -r ~/desktop/backup
+mkdir backup
+# Creats subfolder (backup/dataBase/)
+cd backup
+mkdir database
+mkdir scripts
+
+# Copies all (*) the files from the dataBase folder to the new folder (backup/) and subfolder (backup/dataBase/)
+cp -r ~/desktop/RentalCarApp/database/ ~/desktop/backup/database/
+
+cp -r ~/desktop/RentalCarApp/scripts/ ~/desktop/backup/scripts/
+
+cp -r ~/desktop/RentalCarApp/ ~/desktop/backup/
+```
+
+### Developing the action of editing files
+1. Get the input as argumanets `$1 $2 $3 $4`
+2. check number of argumetns (4) `$#`
+3. Go inside database
+4. find the car with given license
+5. Change anything from that file
+
+The code shown below shows the process
+```.sh
+#!/bin/bash
+#This program edit the information of an exiting car in the
+#maincarfile
+#user enters [license place] [model] [red] [pp]
+
+if [ $# -ne 4 ]; then
+  echo "Error with the number of arguments"
+  echo "Enter License Maker Model Passengers"
+  exit
+fi
+
+license=$1
+maker=$2
+model=$3
+pp=$4
+
+cd ../database
+
+if [ ! -f "$license.txt" ]; then
+  echo "File not found!"
+fi
+
+#find the line with the given car plate and delete it
+sed -i '' "/^$license/d" maincarfile.txt
+#add the new information
+echo "$license $maker $model $pp" >> maincarfile.txt
+cd ../scripts
+bash frame "Car edited successfully"
+```
+
+### Developing the testcreate
+1. 
+
+### Developing Help files
+We will be using man pages to create a help file, almost all UNIX like oses comes preinstalled with man pages. Its a document processing system developed by AT&T for the Unix operating system. 
+This program below shows how the Help files is structured using create.sh program. 
+
+```.6
+.TH man 6 "29 oct 2019" "1.0" "create man page"
+.SH NAME
+Create \- Create a new car
+.SH SYNOPSIS
+bash create [license] [model] [color] [passengers]
+.SH DESCRIPTION
+Create is bash program that allows to create a new in bash
+.SH AUTHOR
+Created by Ismail Khalid
 ```
 
 Evaluation
