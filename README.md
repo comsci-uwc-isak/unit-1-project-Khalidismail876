@@ -42,7 +42,7 @@ rental app. It includes the input/output and main action.
 
 ### Second Sketch of system
 ![CarRental](prosys.jpg)
-**Fig. 1** This diagram creates a frame on the important words
+**Fig. 2** This diagram creates a frame on the important words
 that the program will use. 
 
 Development
@@ -91,9 +91,79 @@ echo "uninstallation complete successfully"
 This script meets the requirement of the client for a simple installation and uninstallation 
 however, it could be simplified so that the user does not need to execute the program by typing ``bash install.sh``
 
-###problem solving
+### problem solving
 1. How to detect a word's length is odd or even?
   A. you use the module sign which is %, and this sign will show if the length of the word is even or odd. We also use if statement with the module sign and it can be state it this way. len which is the length of the of the word % 2, if the outcome is 1 then the word is odd if its 0 then the word is even. 
+  
+### 3. Script for Frame
+This code shown below will create a frame around the word that is given
+
+```.sh
+#!/bin/bash
+
+word=$1
+len=${#word}
+padding=3
+
+
+#lenght of the frame
+width=80
+(( spaces=$width/2-$len/2-1 )) 
+
+# Print a whole line with symbol
+for (( i=0; i<$width; i++ ))
+do
+	echo -n "#"
+done
+echo " " #this is for going down one line 
+
+#prints the padding
+for (( p=1; p<padding ; p++ ))
+do
+	echo -n "#"
+	for (( s=0; s<$width-2; s++ ))
+	do
+		echo -n " "
+	done
+	echo "#"
+done
+
+#line for the word
+echo -n "#"
+for (( s=0;s<$spaces;s++ ))
+do
+	echo -n " "
+done
+echo -n $word
+
+if [[ $(( $len%2 )) -ne 0 ]]; then
+        (( spaces=$spaces-1 ))
+
+fi
+for (( s=0;s<$spaces;s++ ))
+do
+        echo -n " "
+done
+echo "#"
+
+#prints the padding
+for (( p=1; p<padding ; p++ ))
+do
+        echo -n "#"
+        for (( s=0; s<$width-2; s++ ))
+        do
+                echo -n " "
+        done
+        echo "#"
+done
+
+#print bottom frame
+for (( i=0; i<$width; i++ ))
+do
+        echo -n "#"
+done
+echo " " #this is for going down one line 
+```
 
 ### Developing the action create new car
 This process involves the inputs _,_,_,_, and the outputs:
@@ -262,9 +332,6 @@ echo "$license $maker $model $pp" >> maincarfile.txt
 cd ../scripts
 bash frame "Car edited successfully"
 ```
-
-### Developing the testcreate
-1. 
 
 ### Developing Help files
 We will be using man pages to create a help file, almost all UNIX like oses comes preinstalled with man pages. Its a document processing system developed by AT&T for the Unix operating system. 
