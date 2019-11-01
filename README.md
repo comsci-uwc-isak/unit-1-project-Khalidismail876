@@ -49,6 +49,9 @@ that the program will use.
 ![CarRental](Sketchhh.jpg)
 **Fig. 3** This diagram backsup all the data that we need to restore.
 
+### Test Plan
+![CarRental](Sketchhh.jpg)
+
 Development
 --------
 ### 1. Script for installation
