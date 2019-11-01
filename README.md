@@ -50,7 +50,8 @@ that the program will use.
 **Fig. 3** This diagram backsup all the data that we need to restore.
 
 ### Test Plan
-![CarRental](Sketchhh.jpg)
+![CarRental](table.png)
+**Fig. 4** This table shows the test of all scripts in the program.
 
 Development
 --------
@@ -202,6 +203,8 @@ echo "" > $license.txt
 
 bash frame "Installation Complete"
 ### Developing the action of recording trip
+This code will record all travelled Km in the car file that is created.
+
 1. get the arguments and check (2)
 2. check that the car exist `test license.txt`
 3. add a new line to the file `license,txt`
@@ -229,6 +232,9 @@ bash frame "Trip recorded successfully"
 ```
 
 ### Developing the action of Summarizing the traveled trip
+This code will sum all the km that is stored in car file and give 
+the used one number.
+
 1. Get the argument (bash Summary.sh license)
 2. Check if the car exists 
 3. show the all the travelled KM
@@ -268,6 +274,9 @@ bash frame "Total Km Traveled $totalkm"
 ```
 
 ### Developing the action of backingup the data
+This code will restore all the data they prevous had in RentalCarApp to a created folder
+called backup.
+
 1. Go to Desktop (cd ~)
 2. check if there is a file named Backup 
 3. if the file exist then delete
@@ -302,6 +311,8 @@ cp -r ~/desktop/RentalCarApp/ ~/desktop/backup/
 ```
 
 ### Developing the action of editing files
+This code will allow the user to edit and change the data they stored in the car file.
+
 1. Get the input as argumanets `$1 $2 $3 $4`
 2. check number of argumetns (4) `$#`
 3. Go inside database
@@ -340,6 +351,44 @@ cd ../scripts
 bash frame "Car edited successfully"
 ```
 
+
+### Developing the action of deleting file
+This code will delete a car file from database and inside maincarfile. 
+
+1. Get the input as argumanets `$1 
+2. check number of argumetns (1) `$#`
+3. Go inside database
+4. find the car with given license
+5. remove the car file from database and inside the maincarfile.txt
+
+The code below shows how the it works
+```.sh
+#!/bin/bash
+
+#this program delete a car given one argument
+#licences
+
+license=$1
+if [ $# -ne 1 ]; then rm -rf
+        echo "error with the number of arguments"
+        echo " enter license"
+        exit
+fi
+
+cd ../database
+#check if the .txt  file exist
+if [ ! -f "$license.txt" ]; then
+        echo "file doesn't exist"
+        exit
+else
+        rm $license.txt
+        sed -i '' "/^$license/d" maincarfile.txt
+fi
+
+cd ../scripts
+bash frame "car deleted successufully"
+```
+
 ### Developing Help files
 We will be using man pages to create a help file, almost all UNIX like oses comes preinstalled with man pages. Its a document processing system developed by AT&T for the Unix operating system. 
 This program below shows how the Help files is structured using create.sh program. 
@@ -355,6 +404,14 @@ Create is bash program that allows to create a new in bash
 .SH AUTHOR
 Created by Ismail Khalid
 ```
+
+### Tools used in Unit 1
+1. Bash Commands (Used)
+2. For loops (Used)
+3. If statement (Used)
+4. Man pages/help files (Used)
+5. GitHUb (Used)
+
 
 Evaluation
 -----------
@@ -396,10 +453,6 @@ because all of them require a person who knows how the program is designed or th
 For the dynamic test, you need to excute the programming code and test it with a set of given cases. For the alpha testing
 you need the developers to use the program and see if it actually works or not. White box test is the last test that have been used which is examing the code that is used to create the program. All these types of testing is used for this program. 
 
-### Tools used in Unit 1
-1. Bash Commands (Used)
-2. For loops (Used)
-3. If statement (Used)
-4. Man pages/help files (Used)
-5. GitHUb (Used)
+### future updates
+When this program is launched, it will contain a lot of things that the users will request to be impoved and we will improve it depending on their requests. One way we could improve this code is to make as one application and make the user press buttons instead of running codes. Also creating a program that scans QR of the cars would help the company be easier to keep track their data. providing a carriable device that would help the drivers put all the data of the car they drove would smooth the process of the company. More updates will come depending on the need that the users want to get. 
 
