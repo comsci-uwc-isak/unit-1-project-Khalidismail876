@@ -8,9 +8,9 @@ A car rental management minimal app in Bash.
 Contents
 -----
   1. [Planning](#planning)
-  1. [Design](#design)
-  1. [Development](#development)
-  1. [Evalution](#evaluation)
+  2. [Design](#design)
+  3. [Development](#development)
+  4. [Evalution](#evaluation)
 
 Planning
 ----------
@@ -392,4 +392,11 @@ This test corresponds to dynamic, alpha, and white box test. The reason why it c
 because all of them require a person who knows how the program is designed or the person who actually designed it. 
 For the dynamic test, you need to excute the programming code and test it with a set of given cases. For the alpha testing
 you need the developers to use the program and see if it actually works or not. White box test is the last test that have been used which is examing the code that is used to create the program. All these types of testing is used for this program. 
+
+### Tools used in Unit 1
+1. Bash Commands (Used)
+2. For loops (Used)
+3. If statement (Used)
+4. Man pages/help files (Used)
+5. GitHUb (Used)
 
