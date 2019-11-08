@@ -1,4 +1,10 @@
 ![CarRental](logo.png)
+```.py
+Marks= 18
+Demo=-
+Total=(Marks+Demo)= 18
+```
+**Graded on Nov 8**
 
 Car Rental Minimal App
 ===========================
@@ -32,6 +38,17 @@ These are outcomes that can be measured
 8. A car information can be deleted
 9. The application can be uninstall
 
+**Criterion A**
+
+|Level|Descriptor|
+|----|-----|
+|5|The client in the car rental office is identified and his situation described. The rationale for choosing the proposed product (Computer tools used) is justified and includes a range of appropriate criteria for evaluating the success of the product.|
+```.sh
+Rational
+* Great job with this criterion. You could improve the definition of the problem by answering the questions: Who is the client? Why is the product being developed?
+* You are missing marks because the justification for the solution is not specific and clear enough. You say it is a simple system, what do you mean by that, how does the solution solve the clients problems?
+* One more justificaiton for using BASH is that we were learning it. 
+```
 
 Design
 ---------
@@ -52,6 +69,18 @@ that the program will use.
 ### Test Plan
 ![CarRental](table.png)
 **Fig. 4** This table shows the test of all scripts in the program.
+
+## Criterion B
+|**level**|**Description**|
+|-----|------------|
+|5|An outline test plan is included but partially complete. A system diagram and some flow diagrams for algorithms in the product are included. They provide a basic understanding of how the product was developed.|
+```.sh
+Rationale
+* You can use the figure as a reference point and refeer to it with Fig. 1. For example: "As shown in Fig. 1, the computational system consists of ..." This is necessary to be concrete about the reason from including the picture.
+* Here you did not get all the full marks because you are missing the description. Remember, an image without description is an unbiguous tool. Add a paragraph explaining what YOU see in the image and the reason why you included. This will help the reader follow your ideas. 
+* The system diagram needs an uptaded version. It is difficult to follow.
+* The flow diagrams have problems with the symbols. We use rectangles, diamonds, and the other two symbols because they are standard representations of computer operations. When you use different symbols is difficult to follow your ideas.
+```
 
 Development
 --------
@@ -412,6 +441,16 @@ Created by Ismail Khalid
 4. Man pages/help files (Used)
 5. GitHUb (Used)
 
+## Criterion C
+|**level**|**Description**|
+|-----|------------|
+|5|The proposed solution is characterized by the appropriate use of existing tools. The techniques are adequate for the task and their use is explained. All sources are identified.|
+```.sh
+Rationale
+* You also need description here about the important parts of the code, such as things you learned for the first time, issues and solutions.
+* Try to use the references in body of the document in the place where you use the information, for example, when researching solutions to the problems you faced," As presented in [1], bash can be frustrating..."
+* The tools used in Unit 1 need description. Listing is not sufficient. Why those tools and no other tools?
+```
 
 Evaluation
 -----------
@@ -456,3 +495,12 @@ you need the developers to use the program and see if it actually works or not. 
 ### future updates
 When this program is launched, it will contain a lot of things that the users will request to be impoved and we will improve it depending on their requests. One way we could improve this code is to make as one application and make the user press buttons instead of running codes. Also creating a program that scans QR of the cars would help the company be easier to keep track their data. providing a carriable device that would help the drivers put all the data of the car they drove would smooth the process of the company. More updates will come depending on the need that the users want to get. 
 
+## Criterion D
+|**level**|**Description**|
+|-----|------------|
+|3|The product is fully evaluated against the success criteria identified in criterion A. Recommendations for further improvement of the product are realistic.|
+```.sh
+Rationale
+* The Improvement is realistic. 
+*The evidence for the achievement of the criteria is limited so you lost some marks here. Next time, try to expand of the reasons/evidence that allows you to say that you have met the success criteria. Writing "This file check all the criteria" is not sufficient
+```
